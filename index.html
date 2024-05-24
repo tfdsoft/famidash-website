@@ -179,8 +179,20 @@
             const screenshotsPopupClose = document.querySelector(".screenshots-popup-close button");
 
             screenshotsButton.addEventListener("click", function() {
-                screenshotsPopup.style.display = "block";
-                overlay.style.display = "block";
+                fetch('/list-images')
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = screenshotsPopup.querySelector('.screenshots-container');
+                        container.innerHTML = ''; // Clear previous content
+                        data.forEach(image => {
+                            const imgElement = document.createElement('img');
+                            imgElement.src = image;
+                            container.appendChild(imgElement);
+                        });
+                        screenshotsPopup.style.display = "block";
+                        overlay.style.display = "block";
+                    })
+                    .catch(error => console.error('Error loading images:', error));
             });
 
             screenshotsPopupClose.addEventListener("click", function() {
@@ -230,18 +242,4 @@
         </section>
     </main>
     <footer>
-        &copy; Famidash. You can find the license <a href="https://github.com/famidash/famidash/blob/main/LICENSE" style="color: white;">here.</a>
-    </footer>
-
-    <div class="overlay"></div>
-
-    <div class="popup">
-        <div class="popup-close"><button>&times;</button></div>
-        <a href="https://ko-fi.com/jaezu">Ko-fi</a>
-        <a href="https://patreon.com/kandowontu">Patreon</a>
-        <a href="https://discord.com/invite/PCbwQaZs8K">Discord</a>
-        <a href="https://twitter.com/TeamFamidash">Twitter</a>
-        <a href="https://wetdry.world/@famidash">Mastodon</a>
-    </div>
-
-    <
+        &copy; Famidash. You can find the license <a href="https://github.com/famidash/famidash/blob/main/LICENSE
