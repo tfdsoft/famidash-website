@@ -88,7 +88,7 @@
             color: white;
         }
         /* Popup Styles */
-        .popup {
+        .popup, .screenshots-popup {
             display: none;
             position: fixed;
             top: 50%;
@@ -110,16 +110,22 @@
         .popup a:hover {
             text-decoration: underline;
         }
-        .popup-close {
+        .popup-close, .screenshots-popup-close {
             display: block;
             text-align: right;
             margin-bottom: 1rem;
         }
-        .popup-close button {
+        .popup-close button, .screenshots-popup-close button {
             background: none;
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
+        }
+        .screenshots-popup img {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         /* Overlay */
         .overlay {
@@ -164,6 +170,22 @@
             overlay.addEventListener("click", function() {
                 popup.style.display = "none";
                 overlay.style.display = "none";
+                screenshotsPopup.style.display = "none";
+            });
+
+            // Screenshots Popup
+            const screenshotsButton = document.querySelector("#screenshots-button");
+            const screenshotsPopup = document.querySelector(".screenshots-popup");
+            const screenshotsPopupClose = document.querySelector(".screenshots-popup-close button");
+
+            screenshotsButton.addEventListener("click", function() {
+                screenshotsPopup.style.display = "block";
+                overlay.style.display = "block";
+            });
+
+            screenshotsPopupClose.addEventListener("click", function() {
+                screenshotsPopup.style.display = "none";
+                overlay.style.display = "none";
             });
         });
     </script>
@@ -204,6 +226,7 @@
             <p>Any questions or feedbacks? Get in touch!</p>
             <a class="button" href="https://github.com/famidash/famidash/issues/new/choose">Submit Feedback</a>
             <a id="follow-us-button" class="button">Follow Us</a>
+            <a id="screenshots-button" class="button">Screenshots</a>
         </section>
     </main>
     <footer>
@@ -220,5 +243,5 @@
         <a href="https://twitter.com/TeamFamidash">Twitter</a>
         <a href="https://wetdry.world/@famidash">Mastodon</a>
     </div>
-</body>
-</html>
+
+    <
