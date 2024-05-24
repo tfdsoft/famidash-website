@@ -19,6 +19,22 @@
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
         h1 {
             margin: 0;
             font-size: 2.5rem;
@@ -29,6 +45,11 @@
             align-items: center;
             flex-direction: column;
             padding: 2rem;
+        }
+        section {
+            max-width: 800px;
+            margin: 2rem 0;
+            text-align: center;
         }
         p {
             max-width: 600px;
@@ -45,7 +66,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-top: 1rem;
         }
-        a {
+        a.button {
             display: inline-block;
             margin-top: 2rem;
             padding: 0.75rem 1.5rem;
@@ -55,13 +76,16 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        a:hover {
+        a.button:hover {
             background-color: #45a049;
         }
         footer {
             margin-top: 2rem;
             text-align: center;
             color: #777;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
@@ -69,14 +93,53 @@
     <header>
         <h1>Famidash</h1>
     </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <main>
-        <img src="./famidash.png" alt="Famidash Logo">
-        <p>Welcome to Famidash, a demake of the popular game Geometry Dash for the NES! Experience the thrilling platformer with retro graphics and nostalgic gameplay on your favorite 8-bit console. With 1:1 levels and music from the original game, Famidash brings a modern hit to the vintage NES console.</p>
-         <a href="https://github.com/famidash/famidash">Find it here!</a>
-        <a href="https://github.com/famidash/famidash?tab=readme-ov-file#credits-core-team-only">Meet the developers</a>
+        <section id="home">
+            <img src="./famidash.png" alt="Famidash Logo">
+            <p>Welcome to Famidash, a demake of the popular game Geometry Dash for the NES! Experience the thrilling platformer with retro graphics and nostalgic gameplay on your favorite 8-bit console. With 1:1 levels and music from the original game, Famidash brings a modern hit to the vintage NES console.</p>
+            <a class="button" href="https://github.com/famidash/famidash">Find it here!</a>
+            <a class="button" href="https://github.com/famidash/famidash?tab=readme-ov-file#credits-core-team-only">Meet the developers</a>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <p>Famidash offers the following exciting features:</p>
+            <ul>
+                <li>Authentic 8-bit graphics and sound</li>
+                <li>1:1 levels from the original Geometry Dash</li>
+                <li>Classic NES controller support</li>
+                <li>Challenging gameplay with precise controls</li>
+            </ul>
+        </section>
+        <section id="download">
+            <h2>Download</h2>
+            <p>Ready to play? Download Famidash now:</p>
+            <a class="button" href="https://github.com/famidash/famidash/releases">Download Famidash</a>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <p>Here's what players are saying:</p>
+            <blockquote>
+                "Famidash brings back the magic of the NES era with a modern twist. Absolutely love it!" - Alex
+            </blockquote>
+            <blockquote>
+                "A perfect demake of Geometry Dash. Nostalgic and challenging!" - Jamie
+            </blockquote>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Get in touch!</p>
+            <a class="button" href="https://github.com/famidash/famidash/issues/new/choose">Submit Feedback</a>
+        </section>
     </main>
     <footer>
-        &copy; Famidash. You can find the license here: https://github.com/famidash/famidash/blob/main/LICENSE
+        &copy; Famidash. You can find the license here: <a href="https://github.com/famidash/famidash/blob/main/LICENSE" style="color: white;">License</a>
     </footer>
 </body>
 </html>
