@@ -87,6 +87,51 @@
             background-color: #333;
             color: white;
         }
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+        .popup a {
+            display: block;
+            margin: 1rem 0;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .popup a:hover {
+            text-decoration: underline;
+        }
+        .popup-close {
+            display: block;
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+        .popup-close button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -99,6 +144,27 @@
                     section.scrollIntoView({ behavior: "smooth" });
                 });
             }
+
+            // Follow Us Popup
+            const followUsButton = document.querySelector("#follow-us-button");
+            const popup = document.querySelector(".popup");
+            const overlay = document.querySelector(".overlay");
+            const popupClose = document.querySelector(".popup-close button");
+
+            followUsButton.addEventListener("click", function() {
+                popup.style.display = "block";
+                overlay.style.display = "block";
+            });
+
+            popupClose.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+
+            overlay.addEventListener("click", function() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
         });
     </script>
 </head>
@@ -137,10 +203,22 @@
             <h2>Contact Us</h2>
             <p>Any questions or feedbacks? Get in touch!</p>
             <a class="button" href="https://github.com/famidash/famidash/issues/new/choose">Submit Feedback</a>
+            <a id="follow-us-button" class="button">Follow Us</a>
         </section>
     </main>
     <footer>
         &copy; Famidash. You can find the license <a href="https://github.com/famidash/famidash/blob/main/LICENSE" style="color: white;">here.</a>
     </footer>
+
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <div class="popup-close"><button>&times;</button></div>
+        <a href="https://ko-fi.com/jaezu">Ko-fi</a>
+        <a href="https://patreon.com/kandowontu">Patreon</a>
+        <a href="https://discord.com/invite/PCbwQaZs8K">Discord</a>
+        <a href="https://twitter.com/TeamFamidash">Twitter</a>
+        <a href="https://wetdry.world/@famidash">Mastodon</a>
+    </div>
 </body>
 </html>
