@@ -179,6 +179,14 @@
             const screenshotsPopupClose = document.querySelector(".screenshots-popup-close button");
 
             screenshotsButton.addEventListener("click", function() {
+                const imagePaths = ['./320229775-f7dbe3b9-10e5-49a1-91eb-d63047a70e54.png', './2.jpg', './3.jpg']; // List your image paths here
+                const container = screenshotsPopup.querySelector('.screenshots-container');
+                container.innerHTML = ''; // Clear previous content
+                imagePaths.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image;
+                    container.appendChild(imgElement);
+                });
                 screenshotsPopup.style.display = "block";
                 overlay.style.display = "block";
             });
@@ -223,14 +231,14 @@
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Any questions or feedbacks? Get in touch!</p>
+            <p>Any questions or feedback? Get in touch!</p>
             <a class="button" href="https://github.com/famidash/famidash/issues/new/choose">Submit Feedback</a>
             <a id="follow-us-button" class="button">Follow Us</a>
             <a id="screenshots-button" class="button">Screenshots</a>
         </section>
     </main>
     <footer>
-        &copy; Famidash. You can find the license <a href="https://github.com/famidash/famidash/blob/main/LICENSE" style="color: white;">here.</a>
+        &copy; Famidash. You can find the license <a href="https://github.com/famidash/famidash/blob/main/LICENSE" style="color: white;">here</a>.
     </footer>
 
     <div class="overlay"></div>
@@ -238,8 +246,12 @@
     <div class="popup">
         <div class="popup-close"><button>&times;</button></div>
         <a href="https://ko-fi.com/jaezu">Ko-fi</a>
-        <a href="https://patreon.com/kandowontu">Patreon</a>
-        <a href="https://discord.com/invite/PCbwQaZs8K">Discord</a>
-        <a href="https://twitter.com/TeamFamidash">Twitter</a>
-        <a href="https://wetdry.world/@famidash">Mastodon</a>
+        <a href="https://patreon.com/jaezu">Patreon</a>
     </div>
+
+    <div class="screenshots-popup">
+        <div class="screenshots-popup-close"><button>&times;</button></div>
+        <div class="screenshots-container"></div>
+    </div>
+</body>
+</html>
