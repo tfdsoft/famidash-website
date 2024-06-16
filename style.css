@@ -5,6 +5,7 @@ html, body {
 }
 header {
   position: fixed;
+  background-color: #eeffee;
   height: 48px;
   width: 100%;
   z-index: 1;
