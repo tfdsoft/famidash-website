@@ -7,8 +7,15 @@ header {
   position: fixed;
   height: 48px;
   width: 100%;
+  z-index: 1;
 }
 #logo {
   height: 44px;
   margin: auto;
+}
+
+main {
+  position: relative;
+  top:48px;
+  bottom: 0;
 }
