@@ -1,6 +1,10 @@
 html, body {
-  width: 640px;
+  width: 256px;
+  height: 240px;
+  margin: auto;
 }
 header {
   position: fixed;
+  height: 48px;
+  width: 100%;
 }
