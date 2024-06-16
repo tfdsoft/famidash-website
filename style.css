@@ -1,4 +1,6 @@
 html, body {
+  margin:0;
+  padding:0;
   width: 256px;
   height: 240px;
   background-color: #F1F8E9;
