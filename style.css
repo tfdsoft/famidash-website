@@ -9,6 +9,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #003cff;
 }
 header {
   background-color: #009e00;
@@ -22,6 +23,13 @@ main {
   bottom: 0;
   width:50%;
   margin:auto;
+}
+article {
+  border: 4px solid #662b09;
+  border-radius: 16px;
+  background-color: #aa480f;
+  color:white;
+  
 }
 footer {
   background-color: black;
