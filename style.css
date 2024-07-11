@@ -31,6 +31,9 @@ article {
   color:white;
   
 }
+a:hover{
+  color: white;
+}
 footer {
   background-color: black;
   color: white;
