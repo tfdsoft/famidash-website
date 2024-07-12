@@ -63,3 +63,9 @@ p {
   cursor: pointer;
   border-radius: 100%;
 }
+article {
+  border: 5px solid #472500;
+  border-radius: 16px;
+  width:75%;  
+  margin-left: 12.5%;
+}
