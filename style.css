@@ -28,8 +28,8 @@ main {
   margin: auto;
   box-shadow: 
     0 0 0 8.3px #000000,
-    0 0 0 20.5px #47C820,
-    0 0 0 29px #C9AB00;
+    0 0 0 20.5px #5CE430,
+    0 0 0 29px #CFEF96;
    clip-path: inset(0px -29px 0px -29px);
   -webkit-text-stroke: 1px black;
 }
@@ -69,4 +69,15 @@ article {
   border-radius: 16px;
   width:75%;  
   margin: auto;
+}
+/* links stuff */
+a:link {
+  color: #155FD9
+}
+a:visited {
+  color: #BCBE00;
+  -webkit-text-stroke-color: black;
+}
+a:hover {
+  color: white
 }
