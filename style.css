@@ -3,6 +3,9 @@
   src: url('pusab.woff') format('woff'),
        url('pusab.ttf') format('truetype');
 }
+#real {
+  color: #e7eb00;
+}
 html, body {
   font-family: 'pusab', pusab;
   margin:0;
