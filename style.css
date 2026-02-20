@@ -34,7 +34,7 @@ main {
     0 0 0 20.5px #5CE430,
     0 0 0 29px #CFEF96;
    clip-path: inset(0px -29px 0px -29px);
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1.5px black;
 }
 img {
   height: 100%
@@ -45,7 +45,8 @@ footer {
   height: 133px;
 }
 p {
-  -webkit-text-stroke: 1.5px black;
+  font-size: 24px;
+  -webkit-text-stroke: 1px black;
 }
 .gitton {
   position: relative;
